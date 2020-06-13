@@ -20,7 +20,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
+    path: __dirname + "/src/public",
     filename: "client.min.js"
   },
   plugins: debug ? [] : [
@@ -29,6 +29,6 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ],
   devServer:{
-    port: 3010
+    port: process.env.PORT || 3010
   },
 };
